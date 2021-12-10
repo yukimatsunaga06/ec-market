@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+<link href="../static/css/sign-up.css" th:href="@{/css/sign-up.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+    <form method="post" action="item_list_pizza.html" th:action="@{/login}" th:object="${loginForm}">
+    	<label th:if="${errorMessage}" class="control-label" style="color: red" for="inputError" th:text="${errorMessage}">ダミー</label>
+		<div class="alert alert-success" th:if="${message}">
+        <span th:text="${message}">会員登録に成功しました。</span>
+
+		<label for="inputEmail"></label>
+		<input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email" th:field="*{email}" style=" margin-right: auto; margin-left: auto;"/>
+
+		<label for="inputPassword"></label>
+		 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" style=" margin-right: auto; margin-left: auto;"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="sign-up.html" th:href="@{/market/signup}">Create an account</a></p>
+    </form>
+    </form>
+  </div>
+</div>
+</body>
+</html>
