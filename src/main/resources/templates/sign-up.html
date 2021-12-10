@@ -12,6 +12,7 @@
   <div class="form">
     <form class="login-form">
     <form method="post" th:action="@{/market/signup}" th:object="${signUpForm}" id="signUp">
+      <legend>会員登録</legend>
       <label for="name"></label>
       <label th:errors="*{name}" class="control-label" style="color: #de3155" for="inputError"><p class="family">名前を入力してください</p></label>
       <input type="text" id="name" name="name" th:field="*{name}" class="form-control" placeholder="Name" style="margin-left: auto; margin-right: auto;"/>

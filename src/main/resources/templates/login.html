@@ -8,13 +8,14 @@
 </head>
 <body>
 <div class="login-page">
+<form method="post" action="login.html" th:action="@{/market/login}" th:object="${loginForm}">
   <div class="form">
     <form class="login-form">
-    <form method="post" action="item_list_pizza.html" th:action="@{/login}" th:object="${loginForm}">
-    	<label th:if="${errorMessage}" class="control-label" style="color: red" for="inputError" th:text="${errorMessage}">ダミー</label>
+    	<legend>ログイン</legend>
+    	<label th:if="${errorMessage}" class="control-label" style="color: #de3155" for="inputError" th:text="${errorMessage}">ダミー</label>
 		<div class="alert alert-success" th:if="${message}">
         <span th:text="${message}">会員登録に成功しました。</span>
-
+		</div>
 		<label for="inputEmail"></label>
 		<input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email" th:field="*{email}" style=" margin-right: auto; margin-left: auto;"/>
 
@@ -26,5 +27,6 @@
     </form>
   </div>
 </div>
+<script src="../static/js/sign-up.js" th:src="@{/js/sign-up.js}"></script>
 </body>
 </html>

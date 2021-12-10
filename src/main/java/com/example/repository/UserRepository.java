@@ -38,5 +38,33 @@ public class UserRepository {
 
 		return template.query(sql, param, USER_ROW_MAPPER);
 	}
+	
+	/**
+	 * ログイン時にメールアドレスとパスワードが一致しているか確認するためのメソッド
+	 * 
+	 * @param email
+	 * @param password
+	 * @return メールアドレスとパスワードが一致した施設を取得する
+	 */
+	
+	public User findByEmailAndPassword(String email, String password) {
+		String sql = "SELECT * FROM " + TABLE_NAME + " WHERE email=:email AND password=:password";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("email",email).addValue("password", password);
+		
+		List<User> userList = template.query(sql, param, USER_ROW_MAPPER);
+		if (userList.size() == 0) {
+			return null;
+		}
+		return userList.get(0);
+	}
+	
+	public User load(Integer id) {
+		String sql = "SELECT * FROM " + TABLE_NAME + " WHERE id=:id";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
+		User user = template.queryForObject(sql, param, USER_ROW_MAPPER);
+		return user;
+	}
+	
+
 }
 
