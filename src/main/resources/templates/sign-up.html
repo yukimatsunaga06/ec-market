@@ -11,6 +11,7 @@
 <div class="login-page">
   <div class="form">
     <form class="login-form">
+    <form method="post" th:action="@{/market/signup}" th:object="${signUpForm}" id="signUp">
       <label for="name"></label>
       <label th:errors="*{name}" class="control-label" style="color: #de3155" for="inputError"><p class="family">名前を入力してください</p></label>
       <input type="text" id="name" name="name" th:field="*{name}" class="form-control" placeholder="Name" style="margin-left: auto; margin-right: auto;"/>
@@ -21,7 +22,7 @@
 
       <label for="zipcode"></label>
       <label th:errors="*{zipcode}" class="control-label" style="color: #de3155" for="inputError"><p class="family">郵便番号を入力してください</p></label>
-      <input type="text" id="zipcode" name="zipcode" th:field="*{zipcode}" class="form-control" placeholder="Zipcode" style=" margin-left: auto; margin-right: auto onKeyUp="AjaxZip3.zip2addr(this,'','address');">
+      <input type="text" id="zipcode" name="zipcode" th:field="*{zipcode}" class="form-control" placeholder="Zipcode" style=" margin-left: auto; margin-right: auto;">
       
       <label for="address"></label>
       <label th:errors="*{address}" class="control-label" style="color: #de3155" for="inputError"><p class="family">住所を入力してください</p></label>
@@ -42,6 +43,7 @@
       <p class="message">Already registered? <a href="#">Sign In</a></p>
       <button>register</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
     </form>
   </div>
 </div>
