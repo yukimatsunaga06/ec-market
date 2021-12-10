@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SignUp</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+<link href="../static/css/sign-up.css" th:href="@{/css/sign-up.css}" rel="stylesheet" />
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <label for="name"></label>
+      <label th:errors="*{name}" class="control-label" style="color: #de3155" for="inputError"><p class="family">名前を入力してください</p></label>
+      <input type="text" id="name" name="name" th:field="*{name}" class="form-control" placeholder="Name" style="margin-left: auto; margin-right: auto;"/>
+     
+      <label for="email"></label>
+      <label th:errors="*{email}" class="control-label" style="color: #de3155" for="inputError"><p class="family">メールアドレスを入力してください</p></label>
+      <input type="text" id="email" name="email" th:field="*{email}" class="form-control" placeholder="Email" style=" margin-left: auto; margin-right: auto;"/>
+
+      <label for="zipcode"></label>
+      <label th:errors="*{zipcode}" class="control-label" style="color: #de3155" for="inputError"><p class="family">郵便番号を入力してください</p></label>
+      <input type="text" id="zipcode" name="zipcode" th:field="*{zipcode}" class="form-control" placeholder="Zipcode" style=" margin-left: auto; margin-right: auto onKeyUp="AjaxZip3.zip2addr(this,'','address');">
+      
+      <label for="address"></label>
+      <label th:errors="*{address}" class="control-label" style="color: #de3155" for="inputError"><p class="family">住所を入力してください</p></label>
+      <input type="text" id="address" name="address" th:field="*{address}" class="form-control" placeholder="Address" style=" margin-left: auto; margin-right: auto;"/>
+      
+      <label th:errors="*{telephone}" class="control-label" style="color: #de3155" for="inputError"><p class="family">電話番号を入力してください</p></label>
+      <input type="text" id="telephone" name="telephone" th:field="*{telephone}" class="form-control" placeholder="Tel" style="margin-left: auto; margin-right: auto;"/>
+      
+      <label for="password"></label>
+      <label th:errors="*{password}" class="control-label" style="color: #de3155" for="inputError"><p class="family">パスワードを入力してください</p></label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Password" style="margin-left: auto; margin-right: auto;"/>
+      
+      <label for="confirmationPassword"></label>
+      <label th:if="${passMessage}" th:text="${passMessage}" class="control-label" style="color: #de3155" for="inputError"><p class="family">確認用パスワードを入力してください</p></label>
+      <label id="duplicateMessage" class="control-label" style="color: #de3155"></label>
+      <input type="password" id="confirmationPassword" name="confirmationPassword" class="form-control" placeholder="Confirmation Password" style=" margin-left: auto; margin-right: auto;"/>
+      
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <button>register</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<script src="../static/js/sign-up.js" th:src="@{/js/sign-up.js}"></script>
+
+</body>
+</html>
