@@ -132,3 +132,9 @@
   left: 1px; /* ボタンを本来の位置よりも1px分右にずらす(左を1px空ける) */
   box-shadow: none; /* 影をなくす(これがないと影ごと右下に動く) */
 }
+
+.top-wrapper2 {
+  padding: 100px 0 100px 0; /* 上はヘッダが来るのでその分180px分空ける */
+  color: white;
+  text-align: center;
+}
