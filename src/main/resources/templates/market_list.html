@@ -23,9 +23,9 @@
 <header>
       <div class="container">
         <div class="header">
-          <div class="header-left" th:href="@{/market/list}">
-            <a href="market-list.html">
-              <img class="logo" src="img/logo.jpg" />
+          <div class="header-left">
+          <a th:href="@{/market}">
+              <img class="logo" th:src="@{/img/logo.jpg}" />
             </a>
           </div>
 		
@@ -57,13 +57,15 @@
           <span></span>
         </button>
       </div>
-    </div>s
+    </div>
   </form>
 </div>
       <!-- table -->
+      <div class="item-wrapper">
       <span th:each="item : ${itemList}">
-      <span th:text="${item.name}">&nbsp;&nbsp;1,000円(税抜)</span>
-      </span>>
+      <span th:text="${item.name}">&nbsp;&nbsp;スカート</span>
+      </span>
+      </div>
     <!-- end container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
