@@ -28,14 +28,18 @@
 .btn-wrapper {
   text-align: center; /* ボタン群の配置を真ん中揃えにする */
   margin: 20px 0;
+  top: 50%;
+  display:flex;
 }
 
 .btn-wrapper p {
   margin: 10px 0;
+
 }
 
 .signup {
-  background-color: #239b76;
+  background-color: #f39e00;
+  top: 50%;
 }
 
 .facebook {
