@@ -16,6 +16,11 @@
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+.form family{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -102,8 +107,4 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
-}
-.family{
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-font-family: 'Zen Kaku Gothic New', sans-serif;
 }

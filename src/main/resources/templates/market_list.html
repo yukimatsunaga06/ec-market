@@ -48,21 +48,22 @@
 <body>
       <!-- search form -->
 		<div id="cover">
-			<form method="post" th:action="@{/shop/search-item-by-name}" class="form-horizontal" th:object="${searchItemByNameForm}" id="searchForm">
-    		<div class="tb">
-      		<div class="td"><input type="text" name="searchingName" id="searchingName" th:field="*{searchingName}" class="form-control input-sm" /></div>
-      		<div class="td" id="s-cover">
-        	<button type="submit">
-            <div id="s-circle"></div>
+  <form method="get" action="">
+    <div class="tb">
+      <div class="td"><input type="text" placeholder="Search" required></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
           <span></span>
         </button>
       </div>
-    </div>
+    </div>s
   </form>
 </div>
-
       <!-- table -->
-      
+      <span th:each="item : ${itemList}">
+      <span th:text="${item.name}">&nbsp;&nbsp;1,000円(税抜)</span>
+      </span>>
     <!-- end container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
