@@ -30,7 +30,7 @@
           </div>
 		
           <div class="header-right">
-            <a href="item_list.html">商品一覧</a>
+            <a href="item_list.html">注文履歴</a>
             <a href="sign-up.html" th:href="@{/market/signup}">会員登録</a>
             <a href="#"><i class="fas fa-shopping-cart"></i>カート</a>
             <a href="login.html" th:href="@{/market/login}">
@@ -61,11 +61,24 @@
   </form>
 </div>
       <!-- table -->
-      <div class="item-wrapper">
-      <span th:each="item : ${itemList}">
-      <span th:text="${item.name}">&nbsp;&nbsp;スカート</span>
-      </span>
+<div class="item-wrapper">
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+ 	     <div class="itemflex">
+         <div th:each="item:${itemList}">
+         <img th:src="@{'/img/'+${item.imagePath}}" class="card-img-top" alt="">
+        <h4 class="card-title"><span th:text="${item.name}"></span></h4><br />
+        <h5 class="card-title"><span th:text="${item.price}"></span>円</h5><br />
+        <p class="card-text"><span th:text="${item.description}"></span></p>
+	      </div>
+	      </div>
       </div>
+    </div>
+  </div>
+ </div>
+</div>
     <!-- end container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>

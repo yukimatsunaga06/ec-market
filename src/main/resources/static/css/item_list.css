@@ -26,8 +26,9 @@
 .item-wrapper {
   padding-top: 300px; /* 上はヘッダや検索フォームが来るのでその分空ける */
   padding-bottom: 80px;
-  padding-left: 15%;
+  padding-left: 5%;
   padding-right: 5%;
+  display: flex;
   background-color: #ffffff;
   text-align: center;
 }
@@ -56,4 +57,10 @@
   /* サイズ指定 */
   background-color: #ff4500;
   border-radius: 50%; /* 角丸にする設定 */
+}
+
+.itemflex{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
