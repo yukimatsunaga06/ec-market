@@ -16,14 +16,8 @@ public class Item {
 	/** 説明 */
 	private String description;
 
-	/** Sサイズの価格 */
-	private Integer priceS;
-
-	/** Mサイズの価格 */
-	private Integer priceM;
-
-	/** Lサイズの価格 */
-	private Integer priceL;
+	/** 価格 */
+	private Integer price;
 
 	/** 画像パス */
 	private String imagePath;
@@ -55,28 +49,12 @@ public class Item {
 		this.description = description;
 	}
 
-	public Integer getPriceS() {
-		return priceS;
+	public Integer getPrice() {
+		return price;
 	}
 
-	public void setPriceS(Integer priceS) {
-		this.priceS = priceS;
-	}
-
-	public Integer getPriceM() {
-		return priceM;
-	}
-
-	public void setPriceM(Integer priceM) {
-		this.priceM = priceM;
-	}
-
-	public Integer getPriceL() {
-		return priceL;
-	}
-
-	public void setPriceL(Integer priceL) {
-		this.priceL = priceL;
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 
 	public String getImagePath() {
@@ -97,8 +75,10 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", priceS=" + priceS + ", priceM="
-				+ priceM + ", priceL=" + priceL + ", imagePath=" + imagePath + ", deleted=" + deleted + "]";
+		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
+				+ ", imagePath=" + imagePath + ", deleted=" + deleted + "]";
 	}
 
+	
+	
 }
