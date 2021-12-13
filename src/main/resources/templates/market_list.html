@@ -30,8 +30,9 @@
           </div>
 		
           <div class="header-right">
-            <a href="item_list.html">注文履歴</a>
-            <a href="sign-up.html" th:href="@{/market/signup}">会員登録</a>
+          <a href="item_list.html"><i class="fas fa-camera"></i>出品</a>
+            <a href="item_list.html"><i class="fas fa-history"></i>注文履歴</a>
+            <a href="sign-up.html" th:href="@{/market/signup}"><i class="fas fa-registered"></i>会員登録</a>
             <a href="#"><i class="fas fa-shopping-cart"></i>カート</a>
             <a href="login.html" th:href="@{/market/login}">
               <i class="fas fa-sign-in-alt"></i>ログイン
@@ -46,8 +47,9 @@
     </header>
     
 <body>
+
       <!-- search form -->
-		<div id="cover">
+<div id="cover">
   <form method="get" action="">
     <div class="tb">
       <div class="td"><input type="text" placeholder="Search" required></div>
@@ -67,7 +69,7 @@
     <div class="card">
       <div class="card-body">
  	     <div class="itemflex">
-         <div th:each="item:${itemList}">
+         <div th:each="item:${itemList}" class="margin">
          <img th:src="@{'/img/'+${item.imagePath}}" class="card-img-top" alt="">
         <h4 class="card-title"><span th:text="${item.name}"></span></h4><br />
         <h5 class="card-title"><span th:text="${item.price}"></span>円</h5><br />
