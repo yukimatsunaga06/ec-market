@@ -18,6 +18,17 @@ public class Item {
 
 	/** 価格 */
 	private Integer price;
+	
+	/**カテゴリー*/
+	private String category;
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	/** 画像パス */
 	private String imagePath;
@@ -75,9 +86,10 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
-				+ ", imagePath=" + imagePath + ", deleted=" + deleted + "]";
+		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", category="
+				+ category + ", imagePath=" + imagePath + ", deleted=" + deleted + "]";
 	}
+
 
 	
 	
