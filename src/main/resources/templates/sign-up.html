@@ -4,9 +4,35 @@
 <meta charset="UTF-8">
 <title>SignUp</title>
 <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="css/header.css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" href="css/footer.css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" href="css/responsive.css" th:href="@{/css/responsive.css}"/>
 <link href="../static/css/sign-up.css" th:href="@{/css/sign-up.css}" rel="stylesheet" />
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
 </head>
+
+<header>
+      <!-- <div class="container"> -->
+        <div class="header">
+          <div class="header-left">
+          <a th:href="@{/market}">
+              <img class="logo" th:src="@{/img/logo.jpg}" />
+            </a>
+          </div>
+
+			<div class="header-right">
+				<a href="item_list.html" th:href="@{/market}"><i class="fas fa-list"></i>商品一覧</a> 
+				<a href="item_list.html" th:href="@{/toInsertItem}"><i class="fas fa-camera"></i>出品</a><a
+					href="sign-up.html" th:href="@{/market/signup}"><i
+					class="fas fa-registered"></i>会員登録</a> <a href="#"><i
+					class="fas fa-shopping-cart"></i>カート</a> <a href="login.html"
+					th:href="@{/market/login}"> <i class="fas fa-sign-in-alt"></i>ログイン
+				</a>
+			</div>
+		</div>
 <body>
 <div class="login-page">
   <div class="form">

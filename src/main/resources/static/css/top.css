@@ -124,9 +124,9 @@
 
 .message {
   padding: 15px 40px;
-  background-color: #5dca88;
+  background-color: #f39e00;
   cursor: pointer; /* a要素のようにマウスの乗せるとa要素のようにポインタが変わる */
-  box-shadow: 1px 5px #1a7940; /* ボタンに影をつける 右1px 下5px */
+  box-shadow: 1px 5px #bd8726; /* ボタンに影をつける 右1px 下5px */
 }
 
 /* メッセージクリック時の挙動の設定 */

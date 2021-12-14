@@ -3,7 +3,8 @@
 .login-page {
   display:flex;
   width: 700px;
-  padding: 8% 0 0;
+  padding:1px;
+  padding-bottom: 5px;
   margin: auto;
 }
 .form {

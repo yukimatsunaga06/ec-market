@@ -88,7 +88,6 @@ public class ItemRepository {
 		String sql = "INSERT INTO items_table(id, name, description, price, image_path, category)"
 				+ " VALUES (:id, :name, :description, :price, :imagePath, :category);";
 		template.update(sql, param);
-		System.out.println("あああああ");
 	}
 
 }
