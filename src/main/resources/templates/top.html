@@ -4,15 +4,21 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>market</title>
-<link rel="stylesheet" href="css/common.css" />
-<link rel="stylesheet" href="css/header.css" />
-<link rel="stylesheet" href="css/footer.css" />
-<link rel="stylesheet" href="css/top.css" />
-<link rel="stylesheet" href="css/responsive.css" />
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" th:href="@{/css/slide.css}" />
+<link rel="stylesheet" th:href="@{/css/common.css}" />
+<link rel="stylesheet" th:href="@{/css/header.css}" />
+<link rel="stylesheet" th:href="@{/css/footer.css}" />
+<link rel="stylesheet" th:href="@{/css/top.css}" />
+<link rel="stylesheet" th:href="@{/css/responsive.css}" />
+<link href="../static/css/market.css" th:href="@{/css/market.css}" rel="stylesheet" />
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
 	rel="stylesheet" />
 </head>
+<div class="responsiv">
 <header>
+
 	<div class="container">
 		<div class="header">
 			<div class="header-left" th:href="@{/market/list}">
@@ -38,91 +44,56 @@
 </header>
 <body>
 	<!-- 画像 -->
-	<div id="carouselExampleCaptions" class="carousel slide"
-		data-bs-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-				class="active"></li>
-			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-			<li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="i3.jpg" class="d-block w-100" alt="...">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>First slide label</h5>
-					<p>Some representative placeholder content for the first slide.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="i1,jpg" class="d-block w-100" alt="...">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>Second slide label</h5>
-					<p>Some representative placeholder content for the second
-						slide.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="i2.jpg" class="d-block w-100" alt="...">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>Third slide label</h5>
-					<p>Some representative placeholder content for the third slide.</p>
-				</div>
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleCaptions"
-			role="button" data-bs-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Previous</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleCaptions"
-			role="button" data-bs-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Next</span>
-		</a>
-	</div>
+<ul class="slider">
+<li class="slider-item slider-item01"></li>
+<li class="slider-item slider-item02"></li>
+<li class="slider-item slider-item03"></li>
+</ul>
+
 
 	<!-- 下記詳細 -->
 	<div class="top-item-wrapper">
 		<div class="container">
 			<div class="heading">
-				<h2>ラクラクアロハ、４つの特徴！</h2>
+				<h2>Memory Marketとは？</h2>
 			</div>
 			<div class="top-items">
 				<div class="top-item">
 					<div class="top-item-icon">
 						<img src="img/1.jpg" />
-						<p>ハワイアン料理</p>
 					</div>
 					<p class="text-contents">
 						アロハテーブルやウルフギャング、田中オブ東京などのハワイの有名店で修行を積んだ一流シェフによる本格的なハワイアン料理が家にいてもお手軽に楽しむことができます。
+						<i class="fas fa-arrow-right"></i>
 					</p>
 				</div>
 				<div class="top-item">
 					<div class="top-item-icon">
 						<img src="img/2.jpg" />
-						<p>スイーツも充実</p>
 					</div>
 					<p class="text-contents">
 						アイランドビンテージコーヒーやボガーツカフェのアサイボウルはもちろんのこと、最近流行りのバナンのソフトクリーム、エッグスンシングスのふわふわパンケーキなど有名店のスイーツも充実しています。
+						<i class="fas fa-arrow-right"></i>
 					</p>
 				</div>
 				<div class="top-item">
 					<div class="top-item-icon">
 						<img src="img/14.jpg" />
-						<p>アルコールも豊富</p>
 					</div>
 					<p class="text-contents">
-						ハワイといえばビーチでマイタイ！コナブリューイングのハワイアンコナビールなどハワイでしか飲めないアルコールも豊富にあります。</p>
+						ハワイといえばビーチでマイタイ！コナブリューイングのハワイアンコナビールなどハワイでしか飲めないアルコールも豊富にあります。<i class="fas fa-arrow-right"></i></p>
 				</div>
 				<div class="top-item">
 					<div class="top-item-icon">
 						<img src="img/13.jpg" />
-						<p>ホテル創作料理</p>
 					</div>
 					<p class="text-contents">
 						シェラトンワイキキ、ロイヤルハワイアン、モアナサーフライダー、アウラニに入っているレストランの創作料理も「ラクラクアロハ」なら気軽に注文できます。
+						<i class="fas fa-arrow-right"></i>
 					</p>
+					
 				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -143,5 +114,10 @@
 			<p>アロハな気分をあなたにお届け！</p>
 		</div>
 	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!--自作のJS-->
+<script src="../static/js/slide.js" th:src="@{/js/slide.js}"></script>
 </body>
+</div>
 </html>

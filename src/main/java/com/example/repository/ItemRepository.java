@@ -3,8 +3,10 @@ package com.example.repository;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -62,5 +64,32 @@ public class ItemRepository {
 
 		return itemList;
 	}
+	
+	/**
+	 * 最大のIDを取得
+	 * @return
+	 */
+	public Integer getPrimaryId() {
+		try {
+			Integer maxId = template.queryForObject("SELECT MAX(id) FROM items_table;", new MapSqlParameterSource(),
+					Integer.class);
+			return maxId + 1;
+		} catch (DataAccessException e) {
+			// データが存在しない場合
+			return 1;
+		}
+	}
+	/**
+	 * 商品の登録
+	 * @param item
+	 */
+	public void insert(Item item) {
+		SqlParameterSource param = new BeanPropertySqlParameterSource(item);
+		String sql = "INSERT INTO items_table(id, name, description, price, image_path, category)"
+				+ " VALUES (:id, :name, :description, :price, :imagePath, :category);";
+		template.update(sql, param);
+		System.out.println("あああああ");
+	}
+
 }
 
