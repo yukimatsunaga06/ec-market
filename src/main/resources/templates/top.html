@@ -7,6 +7,7 @@
 <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 <link rel="stylesheet" th:href="@{/css/slide.css}" />
+<link href="../static/css/market.css" th:href="@{/css/market.css}" rel="stylesheet" />
 <link rel="stylesheet" th:href="@{/css/common.css}" />
 <link rel="stylesheet" th:href="@{/css/header.css}" />
 <link rel="stylesheet" th:href="@{/css/footer.css}" />
@@ -18,16 +19,18 @@
 </head>
 <div class="responsiv">
 <header>
-
-	<div class="container">
-		<div class="header">
-			<div class="header-left" th:href="@{/market/list}">
-				<a href="market-list.html"> <img class="logo" src="img/logo.jpg" />
-				</a>
-			</div>
+<div class=”container-fluid“>
+<div class=”row-fluid“>
+      <!-- <div class="container"> -->
+        <div class="header">
+          <div class="header-left">
+          <a th:href="@{/market}">
+              <img class="logo" th:src="@{/img/logo.jpg}" />
+            </a>
+          </div>
 
 			<div class="header-right">
-				<a href="item_list.html"><i class="fas fa-list"></i>商品一覧</a> <a
+				<a href="item_list.html" th:href="@{/market}"><i class="fas fa-list"></i>商品一覧</a> <a
 					href="sign-up.html" th:href="@{/market/signup}"><i
 					class="fas fa-registered"></i>会員登録</a> <a href="#"><i
 					class="fas fa-shopping-cart"></i>カート</a> <a href="login.html"
