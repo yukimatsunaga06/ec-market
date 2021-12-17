@@ -6,10 +6,11 @@
 </head>
 
 <link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+<link href="../static/css/detail.css" th:href="@{/css/item_detail.css}" rel="stylesheet" />
     <link rel="stylesheet" href="css/header.css" th:href="@{/css/header.css}"/>
-    <link rel="stylesheet" href="css/footer.css" th:href="@{/css/footer.css}"/>
     <link rel="stylesheet" href="css/responsive.css" th:href="@{/css/responsive.css}"/>
 <link href="../static/css/sign-up.css" th:href="@{/css/sign-up.css}" rel="stylesheet" />
+
     <link
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
       rel="stylesheet"
@@ -40,12 +41,9 @@
 
 <body>
  <body>
-    <div class="container">
+    <div class="detail-wrapper">
       <form th:action="@{/inCart}" method="post" th:object="${itemCartInForm}">
       	<input type="hidden" name="id" th:value="${item.id}">
-        <div class="row">
-          <div class="col-xs-offset-2 col-xs-8">
-          	
             <h3 class="text-center">商品詳細</h3>
             <div class="row">
               <div class="col-xs-5">
@@ -70,22 +68,12 @@
             </div>
             <br />
 
-            <div class="row">
-              <div class="col-xs-offset-2 col-xs-3">
-                <div class="form-group">
-                  <p>
-                    <input
-                      class="form-control btn btn-warning btn-block"
-                      type="submit"
-                      value="カートに入れる"
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+<div class="insert-blank">
+	<p>
+    	<input class="btn btn--submit" type="submit" value="カートに入れる" />
+    </p>
+</div>
+</form>
     </div>
     <!-- end container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
