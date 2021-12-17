@@ -22,8 +22,8 @@
   </head>
 
 <header>
-<div class=”container-fluid“>
-<div class=”row-fluid“>
+<!-- <div class=”container-fluid“>
+<div class=”row-fluid“> -->
       <!-- <div class="container"> -->
         <div class="header">
           <div class="header-left">
@@ -33,6 +33,7 @@
           </div>
 		
           <div class="header-right">
+          <a href="item_list.html" th:href="@{/}"><i class="fas fa-undo-alt"></i>TOPに戻る</a>
           <a href="item_list.html" th:href="@{/toInsertItem}"><i class="fas fa-camera"></i>出品</a>
             <a href="item_list.html"><i class="fas fa-history"></i>注文履歴</a>
             <a href="sign-up.html" th:href="@{/market/signup}"><i class="fas fa-registered"></i>会員登録</a>
@@ -42,12 +43,25 @@
             </a>
           </div>
         </div>
-                <!-- スマートフォン用のメニューアイコン -->
+ <!--               スマートフォン用のメニューアイコン --> 
+ <div class="accordion">
         <div class="menu-icon">
-          <span class="fa fa-bars"></span>
+        
+          <div class="fa fa-bars">
+         <ul>
+ 			<li><a href="item_list.html" th:href="@{/}"><i class="fas fa-undo-alt"></i>TOPに戻る</a></li>
+            <li><a href="item_list.html" th:href="@{/toInsertItem}"><i class="fas fa-camera"></i>出品</a></li>
+            <li><a href="item_list.html"><i class="fas fa-history"></i>注文履歴</a></li>
+            <li><a href="sign-up.html" th:href="@{/market/signup}"><i class="fas fa-registered"></i>会員登録</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i>カート</a></li>
+            <li><a href="login.html" th:href="@{/market/login}">
+              <i class="fas fa-sign-in-alt"></i>ログイン
+            </a></li>
+      </ul></div>
         </div>
-</div>
-</div>
+        </div>
+<!-- </div>
+</div>  -->
 </header>
 <body>
 <div class=”container-fluid“>
@@ -76,9 +90,11 @@
       <div class="card-body">
  	     <div class="itemflex">
          <div th:each="item:${itemList}" class="margin">
+         <a th:href="@{/market/showDetail?id=} + ${item.id}">
          <img th:src="@{'/img/'+${item.imagePath}}" class="card-img-top" alt="" width="320"
-                      height="320">
-        <h4 class="card-title"><span th:text="${item.name}"></span></h4><br />
+                      height="320"></a>
+         <a th:href="@{/market/showDetail?id=} + ${item.id}">
+        <h4 class="card-title"><span th:text="${item.name}"></span></h4></a><br />
         <h5 class="card-title"><span th:text="${item.price}"></span>円</h5><br />
         <p class="card-text"><span th:text="${item.description}"></span></p>
 	      </div>

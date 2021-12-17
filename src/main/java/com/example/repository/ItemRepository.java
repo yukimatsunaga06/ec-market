@@ -79,6 +79,20 @@ public class ItemRepository {
 			return 1;
 		}
 	}
+	
+	/**
+	 * 商品詳細のSQLを発行
+	 * 
+	 * @param id 商品ID
+	 * @return Item情報１件
+	 */
+	public Item showItemDetail(Integer id) {
+		String showItemDetailSql = "SELECT * FROM items_table WHERE id = :id;";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
+		Item item = template.queryForObject(showItemDetailSql, param, ITEM_ROW_MAPPER);
+		return item;
+	}
+	
 	/**
 	 * 商品の登録
 	 * @param item

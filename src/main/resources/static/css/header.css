@@ -9,12 +9,14 @@ header {
   background-color:#f39e00;
   position: fixed; /* スクロールしてもヘッダが表示されるように位置を固定する */
   z-index: 10; /* ヘッダが一番上に表示されるようにする(数が多いほど上に来る。例えば-1にするとヘッダが裏側に行き見えなくなります) */
+  /*font-size:15vw;*/
 }
 
 
 .header {
   display: flex; /* ヘッダロゴと右側のリンクを横並びにする */
   /* justify-content: flex-end; 右寄せにしたい場合*/
+  
 }
 
 .logo {
@@ -31,6 +33,7 @@ header {
   margin-left: auto; /* ヘッダ右側のリンクだけ右寄せにする(ロゴは左寄せのまま) */
   /* float: right; */
   display: flex; /* ヘッダ右側のリンクを横に並べる */
+  
 }
 
 .header-right a {

@@ -34,6 +34,17 @@ public List<Item> showListSort(String sort) {
 		List<Item> itemList = itemRepository.findAllSort(sortArray[0], isDesc);
 		return itemList;
 	}
+
+
+	/**
+	 * 商品IDをItemRepository内のshowItemDetailに渡す
+	 * 
+	 * @param id
+	 * @return　商品情報を１件
+	 */
+	public Item showItemDetail(Integer id) {
+		return itemRepository.showItemDetail(id);
+	}
 	
 	public Item showDetail(Integer id) {
 		Item item = itemRepository.findById(id);
