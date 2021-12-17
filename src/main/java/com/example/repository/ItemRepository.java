@@ -51,7 +51,8 @@ public class ItemRepository {
 	}
 
 	public List<Item> findByNameAndSort(String name, String sortName, boolean isDesc) {
-		String sql = "SELECT * FROM " + TABLE_NAME + " WHERE name like :name ORDER BY " + sortName;
+		System.out.println(name);
+		String sql = "SELECT * FROM " + TABLE_NAME + " WHERE name LIKE :name ORDER BY " + sortName;
 
 		if (isDesc == true) { // DESCで検索する場合
 			sql += " DESC";
@@ -102,6 +103,19 @@ public class ItemRepository {
 		String sql = "INSERT INTO items_table(id, name, description, price, image_path, category)"
 				+ " VALUES (:id, :name, :description, :price, :imagePath, :category);";
 		template.update(sql, param);
+	}
+	
+	public List<Item> findByName(String name) {
+		String sql = "SELECT * FROM items_table WHERE name LIKE :name ORDER BY price";
+		// SELECT * FROM items WHERE name like '%パーカー%' ORDER BY price_m DESC;
+
+		
+		SqlParameterSource param = new MapSqlParameterSource().addValue("name", "%" + name + "%");
+
+		List<Item> itemList = template.query(sql, param, ITEM_ROW_MAPPER);
+
+
+		return itemList;
 	}
 
 }

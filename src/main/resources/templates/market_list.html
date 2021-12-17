@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,8 +36,8 @@
           <a href="item_list.html" th:href="@{/}"><i class="fas fa-undo-alt"></i>TOPに戻る</a>
           <a href="item_list.html" th:href="@{/toInsertItem}"><i class="fas fa-camera"></i>出品</a>
             <a href="item_list.html"><i class="fas fa-history"></i>注文履歴</a>
-            <a href="sign-up.html" th:href="@{/market/signup}"><i class="fas fa-registered"></i>会員登録</a>
             <a href="#"><i class="fas fa-shopping-cart"></i>カート</a>
+            <a href="sign-up.html" th:href="@{/market/signup}"><i class="fas fa-registered"></i>会員登録</a>
             <a href="login.html" th:href="@{/market/login}">
               <i class="fas fa-sign-in-alt"></i>ログイン
             </a>
@@ -69,9 +69,9 @@
  <!-- search form -->
 
 <div id="cover">
-  <form method="get" action="">
+  <form method="post" th:action="@{/market/search-item-by-name}" th:object="${searchItemByNameForm}" id="searchForm">
     <div class="tb">
-      <div class="td"><input type="text" placeholder="Search" required></div>
+      <div class="td"><input type="text" name="searchingName" id="searchingName" th:field="*{searchingName}" placeholder="Search" required></div>
       <div class="td" id="s-cover">
         <button type="submit">
           <div id="s-circle"></div>
@@ -79,6 +79,7 @@
         </button>
       </div>
     </div>
+    <div th:if="${searchMessage}" th:text="${searchMessage}" id="messageif"></div>
   </form>
 </div>
 
