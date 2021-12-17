@@ -25,4 +25,22 @@ public class ItemController {
 		model.addAttribute("itemList", itemList);
 		return "market_list";
 	}
+	
+	/**
+	 * 商品詳細画面を表示
+	 * 
+	 * @param id　商品ID
+	 * @param model リクエストスコープ
+	 * @return item/detail.html
+	 */
+	@RequestMapping("/showDetail")
+	public String showItemDetail(String id, Model model) {
+		
+		
+		//商品詳細を表示させる
+		Item item = itemService.showItemDetail(Integer.parseInt(id));
+		model.addAttribute("item", item);
+
+		return "item_detail";
+	}
 }
