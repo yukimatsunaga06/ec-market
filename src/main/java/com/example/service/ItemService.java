@@ -64,4 +64,9 @@ public List<Item> showListSort(String sort) {
 		return itemList;
 	}
 	
+	public List<Item> searchByName(String name) {
+		List<Item> itemList = itemRepository.findByName(name);
+		return itemList;
+	}
+	
 }
