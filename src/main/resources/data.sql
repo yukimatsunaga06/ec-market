@@ -13,3 +13,6 @@ VALUES('手作りイヤリング' , '手作りのイヤリングです' , 3000 ,
 INSERT INTO items_table( name, description, price, image_path, category)
 VALUES('ぬいぐるみ' , '限定のぬいぐるみです' , 10000 , 'i4.jpg', '5');
 
+INSERT INTO comments_table( name, comment)
+VALUES('ゆき' , '値下げ出来ますか？');
+
