@@ -81,6 +81,15 @@
   text-align: center;
 }
 
+.top-detail{
+  padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color:#f39e00;
+  text-align: center;
+}
+
+
 .top-items {
   display: flex;
 }

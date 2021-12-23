@@ -31,7 +31,7 @@ a {
 .heading {
   padding-top: 80px;
   padding-bottom: 50px;
-  color: #5f5d60;
+  color: #FFFFFF;
 }
 
 .heading h2 {
@@ -48,5 +48,5 @@ a {
   display: inline-block; /*もしこのクラスがインライン要素だった場合 widhやheightは指定できない。またmarginやpaddingは横のみしか指定できない。今回padding指定したいためにインラインブロック要素に変更する p要素などのブロック要素で使用するだけなら不要*/
   margin-top: 15px;
   font-size: 13px;
-  color: #b3aeb5;
+  color: #FFFFFF;
 }
